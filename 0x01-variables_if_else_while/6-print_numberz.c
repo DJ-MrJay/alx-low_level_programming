@@ -8,15 +8,15 @@
 int main(void)
 {
 	int number;
+	char digit;
 
 	number = 0;
 
-	putchar(number + '0');
-
-	while (number < 9)
+	while (number < 10)
 	{
+		digit = number + '0';
+		putchar(digit);
 		number++;
-		putchar(number + '0');
 	}
 
 	putchar('\n');
