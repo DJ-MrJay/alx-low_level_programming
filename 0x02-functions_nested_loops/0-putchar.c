@@ -1,5 +1,5 @@
 #include "main.h"
-#include <unistd.h> // Add the unistd.h header for the write function
+#include <unistd.h> /* Add the unistd.h header for the write function */
 
 /**
  * main - Entry point
