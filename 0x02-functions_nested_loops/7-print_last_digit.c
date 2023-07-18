@@ -16,5 +16,5 @@ int print_last_digit(int num)
 	last_digit = num % 10;
 	_putchar('0' + last_digit); /* Convert to ASCII and print the digit */
 
-	return last_digit;
+	return (last_digit);
 }
