@@ -1,5 +1,4 @@
 #include "main.h"
-#include <unistd.h> /* Add the unistd.h header for the write function */
 
 /**
  * main - Entry point
@@ -22,11 +21,11 @@ int main(void)
 }
 
 /**
- * _putchar - Custom function to print a character to stdout.
- * @c: The character to be printed.
+ * _putchar - Writes a character to the standard output (stdout)
+ * @c: The character to be written
  *
- * Return: On success, return the character.
- * On error, return -1 and errno is set appropriately.
+ * Return: On success, return the character written.
+ * On error, return -1 and set errno appropriately.
  */
 int _putchar(char c)
 {
