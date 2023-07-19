@@ -1,0 +1,2 @@
+## Debugging in C
+This directory contains C code files to demonstrate debugging techniques in C programming. The main focus of this project is to showcase common debugging practices and how to identify and fix errors in C programs effectively.
