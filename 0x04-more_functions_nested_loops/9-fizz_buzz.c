@@ -5,32 +5,30 @@
  */
 void fizz_buzz(void)
 {
+	int fizz, buzz;
+
 	for (int i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
+		fizz = i % 3 == 0;
+		buzz = i % 5 == 0;
+
+		if (fizz || buzz)
 		{
-			_putchar('F');
-			_putchar('i');
-			_putchar('z');
-			_putchar('z');
-			_putchar('B');
-			_putchar('u');
-			_putchar('z');
-			_putchar('z');
-		}
-		else if (i % 3 == 0)
-		{
-			_putchar('F');
-			_putchar('i');
-			_putchar('z');
-			_putchar('z');
-		}
-		else if (i % 5 == 0)
-		{
-			_putchar('B');
-			_putchar('u');
-			_putchar('z');
-			_putchar('z');
+			if (fizz)
+			{
+				_putchar('F');
+				_putchar('i');
+				_putchar('z');
+				_putchar('z');
+			}
+
+			if (buzz)
+			{
+				_putchar(fizz ? 'B' : 'B');
+				_putchar('u');
+				_putchar('z');
+				_putchar('z');
+			}
 		}
 		else
 		{
