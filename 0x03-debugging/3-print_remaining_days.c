@@ -13,13 +13,13 @@ void print_remaining_days(int month, int day, int year)
 {
     if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
     {
-        if (month > 2) // Leap year, after February
+        if (month > 2) /* Leap year, after February */
         {
             day++;
         }
-        else if (month == 2 && day == 29) // Leap year, February 29
+        else if (month == 2 && day == 29) /* Leap year, February 29 */
         {
-            day = 60; // Day 60 is March 1st
+            day = 60; /* Day 60 is March 1st */
         }
 
         printf("Day of the year: %d\n", day);
