@@ -1,3 +1,4 @@
+#include <stdio.h
 #include "main.h"
 
 /**
@@ -25,7 +26,6 @@ int main(void)
 		if (i < 100)
 			printf(" ");
 	}
-
 	printf("\n");
 	return (0);
 }
