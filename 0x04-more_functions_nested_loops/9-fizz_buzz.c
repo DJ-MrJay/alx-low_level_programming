@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * fizzbuzz - Prints numbers from 1 to 100 with conditions
+ * fizz_buzz - Prints numbers from 1 to 100 with conditions
  */
 void fizz_buzz(void)
 {
@@ -53,6 +53,7 @@ void fizz_buzz(void)
 					divisor *= 10;
 
 				int digit = num / divisor;
+
 				_putchar(digit + '0');
 				num %= divisor;
 				count--;
