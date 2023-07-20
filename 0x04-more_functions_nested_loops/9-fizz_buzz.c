@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * fizz_buzz - Prints numbers from 1 to 100 with conditions
+ * fizzbuzz - Prints numbers from 1 to 100 with conditions
  */
 void fizz_buzz(void)
 {
