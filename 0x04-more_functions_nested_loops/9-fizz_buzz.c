@@ -5,6 +5,7 @@
  * fizz_buzz - Prints numbers from 1 to 100 with conditions
  * 'Fizz' for multiples of 3, 'Buzz' for multiples of 5,
  * 'Fizzbuzz' for multiples of both
+ * Return: always 0
  */
 int main(void)
 {
