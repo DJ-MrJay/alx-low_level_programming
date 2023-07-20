@@ -4,7 +4,7 @@
  * _putchar - Writes a character to the standard output (stdout).
  * @c: The character to be written.
  *
- * Return: On success, 1. On error, -1 is returned and errno is set appropriately.
+ * Return: On success, 1. On error, -1 is returned, and errno is set appropriately.
  */
 int _putchar(char c)
 {
@@ -19,7 +19,9 @@ void print_numbers(void)
 	int num;
 
 	for (num = 0; num <= 9; num++)
+	{
 		_putchar(num + '0');
+	}
 
 	_putchar('\n');
 }
