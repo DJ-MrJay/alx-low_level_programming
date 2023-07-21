@@ -7,18 +7,16 @@
 
 int main(void)
 {
-	// No spaces at the start of a line
-	int i;
-
 	printf("Infinite loop incoming :(\n");
 
-	i = 0;
+	int i = 0;
 
-	// Commenting out the while loop to avoid the infinite loop
-	// while (i < 10)
-	// {
-	// 	putchar(i);
-	// }
+	/*	
+	 * while (i < 10)
+	 * {
+	 *     putchar(i);
+	 * }
+	 */
 
 	printf("Infinite loop avoided! \\o/\n");
 
