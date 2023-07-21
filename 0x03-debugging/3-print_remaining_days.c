@@ -9,8 +9,8 @@
 int is_leap_year(int year)
 {
 	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }
 
 /**
@@ -35,12 +35,13 @@ void print_remaining_days(int month, int day, int year)
 	}
 
 	int total_days = 0;
-	for (int i = 1; i < month; i++)
+
+    for (int i = 1; i < month; i++)
 		total_days += days_in_month[i];
 
 	total_days += day;
 
 	printf("Day of the year: %d\n", total_days);
 	printf("Remaining days: %d\n",
-    is_leap_year(year) ? 366 - total_days : 365 - total_days);
+is_leap_year(year) ? 366 - total_days : 365 - total_days);
 }
