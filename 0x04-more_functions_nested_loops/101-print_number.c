@@ -5,11 +5,11 @@
  * @n: input integer parameter
  * Return: Always 0
  */
-void print_number(int num)
+void print_number(int n)
 {
-	int i = num;
+	int i = n;
 
-	if (num < 0)
+	if (n < 0)
 	{
 		_putchar(45);
 		i = -i;
