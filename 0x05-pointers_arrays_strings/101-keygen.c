@@ -9,19 +9,45 @@
  */
 int main(void)
 {
-int i;
-int len = 10;
-char password[len + 1];
-char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}[];:<>,.?/";
+    char password[84];
+    int index = 0, sum = 0, diff_half1, diff_half2;
 
-srand(time(NULL));
+    srand(time(0));
 
-for (i = 0; i < len; i++)
-password[i] = charset[rand() % (sizeof(charset) - 1)];
+    while (sum < 2772)
+    {
+        password[index] = 33 + rand() % 94;
+        sum += password[index++];
+    }
+    password[index] = '\0';
 
-password[len] = '\0';
+    if (sum != 2772)
+    {
+        diff_half1 = (sum - 2772) / 2;
+        diff_half2 = (sum - 2772) / 2;
 
-printf("%s\n", password);
+        if ((sum - 2772) % 2 != 0)
+            diff_half1++;
 
-return (0);
+        for (index = 0; password[index]; index++)
+        {
+            if (password[index] >= (33 + diff_half1))
+            {
+                password[index] -= diff_half1;
+                break;
+            }
+        }
+
+        for (index = 0; password[index]; index++)
+        {
+            if (password[index] >= (33 + diff_half2))
+            {
+                password[index] -= diff_half2;
+                break;
+            }
+        }
+    }
+
+    printf("%s", password);
+    return (0);
 }
