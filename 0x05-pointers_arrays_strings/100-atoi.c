@@ -4,28 +4,42 @@
  * _atoi - converts a string to an integer.
  * @s: pointer to a string
  *
- * Return: integer value of the string
+ * Return: integer value of the string, or 0 if no valid integer is found.
  */
 int _atoi(char *s)
 {
-int sign = 1;
-int num = 0;
+int i = 0;
+int d = 0;
+int n = 0;
+int len = 0;
+int f = 0;
+int digit = 0;
 
-while (*s != '\0')
+while (s[len] != '\0')
+len++;
+
+while (i < len && f == 0)
 {
-if (*s == '-')
-sign *= -1;
+if (s[i] == '-')
+++d;
 
-if (*s >= '0' && *s <= '9')
+if (s[i] >= '0' && s[i] <= '9')
 {
-num = num * 10 + (*s - '0');
+digit = s[i] - '0';
+if (d % 2)
+digit = -digit;
 
-if (*(s + 1) < '0' || *(s + 1) > '9')
+n = n * 10 + digit;
+f = 1;
+
+if (s[i + 1] < '0' || s[i + 1] > '9')
 break;
+
+f = 0;
 }
 
-s++;
+i++;
 }
 
-return (num *sign);
+return (f == 0 ? 0 : n);
 }
