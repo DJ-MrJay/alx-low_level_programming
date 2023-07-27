@@ -1,35 +1,26 @@
 #include "main.h"
 
 /**
- * leet - Encodes a string into 1337.
- * @str: Pointer to the string to encode.
- *
- * Return: Pointer to the resulting encoded string.
+ * leet - Encodes a string into 1337
+ * @str: The input string
+ * Return: Pointer to the modified string
  */
 char *leet(char *str)
 {
-char *ptr = str;
-char leet_map[10] = {'O', 'L', '\0', 'E', 'A', '\0', '\0', 'T', '\0', 'O'};
+int i, j;
+char letters[] = "aAeEoOtTlL";
+char leet[] = "4433007711";
 
-while (*ptr != '\0')
+for (i = 0; str[i]; i++)
 {
-char c = *ptr;
-
-if (c >= 'a' && c <= 'z')
+for (j = 0; letters[j]; j++)
 {
-/* Map lowercase letters to their 1337 equivalents */
-c = leet_map[c - 'a'];
+if (str[i] == letters[j])
+{
+str[i] = leet[j];
+break;
 }
-
-else if (c >= 'A' && c <= 'Z')
-{
-/* Map uppercase letters to their 1337 equivalents */
-c = leet_map[c - 'A'];
 }
-
-_putchar(c);
-
-ptr++;
 }
 
 return (str);
