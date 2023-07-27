@@ -32,5 +32,5 @@ _putchar(c);
 ptr++;
 }
 
-return str;
+return (str);
 }

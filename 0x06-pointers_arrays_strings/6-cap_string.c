@@ -25,5 +25,5 @@ capitalize_next = is_separator(*ptr);
 ptr++;
 }
 
-return str;
+return (str);
 }
