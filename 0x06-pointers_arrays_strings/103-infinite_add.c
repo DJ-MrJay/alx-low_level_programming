@@ -33,7 +33,8 @@ end--;
 * @len1: The length of the first number
 * @len2: The length of the second number
 */
-static void add_numbers(char *n1, char *n2, char *r, int size_r, int len1, int len2)
+static void add_numbers(char *n1, char *n2, char *r,
+int size_r, int len1, int len2)
 {
 int i, j, k, carry = 0;
 
