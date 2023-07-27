@@ -8,29 +8,29 @@
  */
 char *leet(char *str)
 {
-char *ptr = str;
-char leet_map[10] = {'O', 'L', '\0', 'E', 'A', '\0', '\0', 'T', '\0', 'O'};
+    char *ptr = str;
+    char leet_map[10] = {'O', 'L', '\0', 'E', 'A', '\0', '\0', 'T', '\0', 'O'};
 
-while (*ptr != '\0')
-{
-char c = *ptr;
+    while (*ptr != '\0')
+    {
+        char c = *ptr;
 
-if (c >= 'a' && c <= 'z')
-{
-/* Map lowercase letters to their 1337 equivalents */
-c = leet_map[c - 'a'];
-}
+        if (c >= 'a' && c <= 'z')
+        {
+            /* Map lowercase letters to their 1337 equivalents */
+            c = leet_map[c - 'a'];
+        }
 
-else if (c >= 'A' && c <= 'Z')
-{
-/* Map uppercase letters to their 1337 equivalents */
-c = leet_map[c - 'A'];
-}
+        else if (c >= 'A' && c <= 'Z')
+        {
+            /* Map uppercase letters to their 1337 equivalents */
+            c = leet_map[c - 'A'];
+        }
 
-_putchar(c);
+        _putchar(c);
 
-ptr++;
-}
+        ptr++;
+    }
 
-return (str);
+    return (str);
 }
