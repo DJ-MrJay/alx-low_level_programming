@@ -27,5 +27,5 @@ dest_ptr++;
 n--;
 }
 
-return dest;
+return (dest);
 }
