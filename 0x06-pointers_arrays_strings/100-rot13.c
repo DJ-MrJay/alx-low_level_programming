@@ -7,20 +7,22 @@
  */
 char *rot13(char *str)
 {
-int i, j;
-char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+int i;
+char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+char *str = s;
 
-for (i = 0; str[i]; i++)
+while (*s)
 {
-for (j = 0; alphabet[j]; j++)
+for (i = 0; i <= 52; i++)
 {
-if (str[i] == alphabet[j])
+if (*s == alphabet[i])
 {
-str[i] = rot13[j];
+*s = rot13[i];
 break;
 }
 }
+s++
 }
 
 return (str);
