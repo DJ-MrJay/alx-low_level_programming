@@ -12,14 +12,14 @@ if (n < 0)
 {
 _putchar('-');
 num = -n;
-} else {
+}
+else
+{
 num = n;
 }
-
 if (num / 10)
 {
 print_number(num / 10);
 }
-
 _putchar((num % 10) + '0');
 }
