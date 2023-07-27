@@ -2,8 +2,8 @@
 
 /**
  * rot13 - Encodes a string using ROT13
- * @ptr: The input string
- * Return: Pointer to the modified string
+ * @s: The input string
+ * Return: encoded string
  */
 char *rot13(char *s)
 {
