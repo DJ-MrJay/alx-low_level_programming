@@ -17,13 +17,13 @@ char c = *ptr;
 
 if (c >= 'a' && c <= 'z')
 {
-// Map lowercase letters to their 1337 equivalents
+/* Map lowercase letters to their 1337 equivalents */
 c = leet_map[c - 'a'];
 }
 
 else if (c >= 'A' && c <= 'Z')
 {
-// Map uppercase letters to their 1337 equivalents
+/* Map uppercase letters to their 1337 equivalents */
 c = leet_map[c - 'A'];
 }
 
