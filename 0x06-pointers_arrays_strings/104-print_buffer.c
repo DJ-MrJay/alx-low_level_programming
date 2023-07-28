@@ -1,40 +1,41 @@
 #include <stdio.h>
 
 /**
- * print_buffer - Prints a buffer.
+ * print_line - Prints a single line of the buffer.
  * @b: Pointer to the buffer to print.
  * @size: The size of the buffer.
+ * @start: The starting index for the line to print.
  */
-void print_buffer(char *b, int size)
+void print_line(char *b, int size, int start)
 {
 int i;
-int j;
 
-for (i = 0; i < size; i += 10)
+printf("%08x: ", start);
+
+for (i = 0; i < 10; i++)
 {
-printf("%08x: ", i);
-for (j = 0; j < 10; j++)
+if (start + i < size)
 {
-if (i + j < size)
-{
-printf("%02x", b[i + j]);
+printf("%02x", b[start + i]);
 }
 else
 {
 printf("  ");
 }
-if (j % 2 == 1)
+
+if (i % 2 == 1)
 {
 printf(" ");
 }
 }
-for (j = 0; j < 10; j++)
+
+for (i = 0; i < 10; i++)
 {
-if (i + j < size)
+if (start + i < size)
 {
-if (b[i + j] >= ' ' && b[i + j] <= '~')
+if (b[start + i] >= ' ' && b[start + i] <= '~')
 {
-printf("%c", b[i + j]);
+printf("%c", b[start + i]);
 }
 else
 {
@@ -42,8 +43,24 @@ printf(".");
 }
 }
 }
+
 printf("\n");
 }
+
+/**
+ * print_buffer - Prints a buffer.
+ * @b: Pointer to the buffer to print.
+ * @size: The size of the buffer.
+ */
+void print_buffer(char *b, int size)
+{
+int i;
+
+for (i = 0; i < size; i += 10)
+{
+print_line(b, size, i);
+}
+
 if (size <= 0)
 {
 printf("\n");
