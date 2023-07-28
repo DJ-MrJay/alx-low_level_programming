@@ -1,12 +1,17 @@
 #include "main.h"
 
 /**
- * infinite_add - adds two numbers
- * @n1: first number
- * @n2: second number
- * @r: result
- * @size_r: result length
- * Return - size
+ * infinite_add - adds two numbers represented as strings.
+ * @n1: First number as a string.
+ * @n2: Second number as a string.
+ * @r: Buffer to store the result of the addition.
+ * @size_r: Size of the result buffer 'r'.*
+ *
+ *
+ * Return:
+ *   On success, the function returns a pointer to the result buffer 'r',
+ *   which contains the sum of the two input numbers as a string. If the
+ *   result exceeds the size of the buffer, the function returns NULL.
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
