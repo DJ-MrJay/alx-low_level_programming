@@ -3,10 +3,7 @@
 
 /**
  * main - Entry point of the program.
- *
- * Description: Demonstrates the usage of the set_string function
- *              to set the value of a pointer to a new string.
- *
+ * 
  * Return: Always 0 (Success)
  */
 int main(void)
