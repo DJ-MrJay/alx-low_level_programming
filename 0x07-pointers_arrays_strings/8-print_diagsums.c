@@ -9,22 +9,19 @@ void print_diagsums(int *a, int size)
 {
 int sum_main = 0;
 int sum_secondary = 0;
+int i;
 
 /* Calculate the sum of the main diagonal and the secondary diagonal */
-for (int i = 0; i < size; i++)
+for (i = 0; i < size; i++)
 {
-/* Accessing elements of the main diagonal */
 sum_main += a[i * size + i];
-/* Accessing elements of the secondary diagonal */
 sum_secondary += a[i * size + (size - 1 - i)];
 }
 
 /* Print the sum of the diagonals */
-/* Convert sum_main to a character and print */
 _putchar('0' + sum_main);
 _putchar(',');
 _putchar(' ');
-/* Convert sum_secondary to a character and print */
 _putchar('0' + sum_secondary);
 _putchar('\n');
 }
