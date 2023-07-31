@@ -16,7 +16,7 @@ char *s1 = "Robert Allen";
 
 printf("%s, %s\n", s0, s1);
 
-// Using the set_string function to set the value of s1 to s0.
+/* Using the set_string function to set the value of s1 to s0. */
 set_string(&s1, s0);
 
 printf("%s, %s\n", s0, s1);
