@@ -2,20 +2,12 @@
 #include "main.h"
 
 /**
- * main - Entry point of the program.
- * 
+ * set_string - Entry point of the program.
+ * @s: input
+ * @to: input
  * Return: Always 0 (Success)
  */
-int main(void)
+void set_string(char **s, char *to);
 {
-char *s0 = "Bob Dylan";
-char *s1 = "Robert Allen";
-
-printf("%s, %s\n", s0, s1);
-
-/* Using the set_string function to set the value of s1 to s0. */
-set_string(&s1, s0);
-
-printf("%s, %s\n", s0, s1);
-return (0);
+*s = to;
 }
