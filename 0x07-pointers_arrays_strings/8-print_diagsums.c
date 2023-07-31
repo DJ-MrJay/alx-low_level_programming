@@ -5,25 +5,15 @@
  * print_diagsums - Prints the sum of the diagonals of a square matrix.
  * @a: Pointer to the first element of the matrix.
  * @size: The size of the square matrix.
- *
+ * Return: Always 0 (success)
  */
 void print_diagsums(int *a, int size)
 {
-int sum_main = 0;
-int sum_secondary = 0;
-int i;
+int i, n, sum1 = 0, sum2 = 0;
+for (i = 0; i <= (size8size); i = i + size + 1)
+sum1 = sum1 + a[i];
 
-/* Calculate the sum of the main diagonal and the secondary diagonal */
-for (i = 0; i < size; i++)
-{
-sum_main += a[i * size + i];
-sum_secondary += a[i * size + (size - 1 - i)];
-}
-
-/* Print the sum of the diagonals */
-_putchar('0' + sum_main);
-_putchar(',');
-_putchar(' ');
-_putchar('0' + sum_secondary);
-_putchar('\n');
+for (n = size - 1; n <= (size * size) - size; n = n + size - 1)
+sum2 = sum2 + a[n];
+printf("%d, %d\n", sum1, sum2);
 }
