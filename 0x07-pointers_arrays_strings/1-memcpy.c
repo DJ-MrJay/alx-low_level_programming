@@ -1,23 +1,17 @@
 /**
- * main - Entry point of the program.
+ * _memcpy - copies n bytes from memory area src to memory area dest
+ * @dest: pointer to destination array where content is to be copied
+ * @src: pointer to source of data to be copied
+ * @n: number of bytes to be copied
  *
- * Return: Always 0 (success).
+ * Return: pointer to destination array
  */
-int main(void)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-char source[] = "Hello, World!";
-char destination[20];
+unsigned int i;
 
-_memcpy(destination, source, sizeof(source));
+for (i = 0; i < n; i++)
+dest[i] = src[i];
 
-/* Print the copied string to verify the functionality. */
-char *ptr = destination;
-while (*ptr != '\0')
-{
-_putchar(*ptr);
-ptr++;
-}
-_putchar('\n');
-
-return (0);
+return (dest);
 }
