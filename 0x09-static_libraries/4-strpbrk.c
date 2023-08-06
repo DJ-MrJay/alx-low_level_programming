@@ -27,5 +27,5 @@ return (s); /* Return the pointer to the first match */
 s++; /* Move to the next character in @s */
 }
 
-return (NULL); /* Return NULL if no match is found */
+return (0); /* Return NULL if no match is found */
 }

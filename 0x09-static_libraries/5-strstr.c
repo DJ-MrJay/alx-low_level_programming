@@ -29,5 +29,5 @@ return (haystack); /* Return the pointer to the first occurrence of */
 /* @needle in @haystack */
 }
 
-return (NULL); /* Return NULL if @needle is not found in @haystack */
+return (0); /* Return NULL if @needle is not found in @haystack */
 }
