@@ -13,13 +13,13 @@ int _strcmp(char *s1, char *s2)
 int i = 0;
 
 /* Iterate through both strings until the null terminator
-is reached or a difference is found */
+* is reached or a difference is found */
 while (s1[i] != '\0' && s2[i] != '\0')
 {
 if (s1[i] != s2[i])
 {
 /* Return the difference between the ASCII values of the
-differing characters */
+* differing characters */
 return (s1[i] - s2[i]);
 }
 i++;
