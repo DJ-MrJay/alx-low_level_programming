@@ -33,5 +33,5 @@ return (n); /* Return the length when a character not in @accept is found */
 s++; /* Move to the next character in @s */
 }
 return (n); /* Return the length of the initial segment of @s consisting of */
-/ * characters from @accept */
+/* characters from @accept */
 }
