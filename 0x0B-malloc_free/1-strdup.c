@@ -9,27 +9,27 @@
  */
 char *_strdup(char *str)
 {
-    char *duplicate;
-    int i, length = 0;
+char *duplicate;
+int i, length = 0;
 
-    if (str == NULL)
-        return (NULL);
+if (str == NULL)
+return (NULL);
 
-    i = 0;
-    while (str[i] != '\0')
-        i++;
+i = 0;
+while (str[i] != '\0')
+i++;
 
-    length = i;
+length = i;
 
-    duplicate = malloc(sizeof(char) * (length + 1));
+duplicate = malloc(sizeof(char) * (length + 1));
 
-    if (duplicate == NULL)
-        return (NULL);
+if (duplicate == NULL)
+return (NULL);
 
-    for (i = 0; str[i] != '\0'; i++)
-        duplicate[i] = str[i];
+for (i = 0; str[i] != '\0'; i++)
+duplicate[i] = str[i];
 
-    duplicate[i] = '\0';
+duplicate[i] = '\0';
 
-    return (duplicate);
+return (duplicate);
 }
