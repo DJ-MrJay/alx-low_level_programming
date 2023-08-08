@@ -10,43 +10,33 @@
  */
 char *argstostr(int ac, char **av)
 {
-int i, j, total_length = 0, str_index = 0;
-char *result;
+int i, n, r = 0, l = 0;
+char *str;
 
-/* Check if there are no arguments or if the array is NULL */
 if (ac == 0 || av == NULL)
 return (NULL);
 
-/* Calculate the total length of the concatenated string */
 for (i = 0; i < ac; i++)
 {
-for (j = 0; av[i][j]; j++)
-total_length++;
+for (n = 0; av[i][n]; n++)
+l++;
 }
-total_length += ac; /* Account for newline characters */
+l += ac;
 
-/* Allocate memory for the concatenated string */
-result = malloc(sizeof(char) * (total_length + 1));
-if (result == NULL)
+str = malloc(sizeof(char) * l + 1);
+if (str == NULL)
 return (NULL);
-
-/* Copy each argument into the concatenated string */
 for (i = 0; i < ac; i++)
 {
-for (j = 0; av[i][j]; j++)
+for (n = 0; av[i][n]; n++)
 {
-result[str_index] = av[i][j];
-str_index++;
+str[r] = av[i][n];
+r++;
 }
-if (i < ac - 1) /* Add newline character after each arg (except the last) */
+if (str[r] == '\0')
 {
-result[str_index] = '\n';
-str_index++;
+str[r++] = '\n';
 }
 }
-
-/* Add null-terminator to the end of the concatenated string */
-result[str_index] = '\0';
-
-return (result);
+return (str);
 }
