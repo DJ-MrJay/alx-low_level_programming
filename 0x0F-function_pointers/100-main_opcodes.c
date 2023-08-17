@@ -15,16 +15,16 @@ char *arr;
 
 if (argc != 2)
 {
-fprintf(stderr, "Usage: %s <number_of_bytes>\n", argv[0]);
-exit(EXIT_FAILURE);
+printf("Error\n");
+exit(1);
 }
 
 bytes = atoi(argv[1]);
 
 if (bytes < 0)
 {
-fprintf(stderr, "Number of bytes cannot be negative.\n");
-exit(EXIT_FAILURE);
+printf("Error\n");
+exit(2);
 }
 
 arr = (char *)main;
@@ -38,6 +38,6 @@ break;
 }
 printf("%02hhx ", arr[i]);
 }
-
 return (0);
 }
+
