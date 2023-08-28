@@ -11,51 +11,51 @@
  */
 int check_num(char *str)
 {
-unsigned int count = 0;
+	unsigned int count = 0;
 
-while (count < strlen(str))
-{
-if (!isdigit(str[count]))
-{
-return (0);
-}
-count++;
-}
+	while (count < strlen(str))
+	{
+		if (!isdigit(str[count]))
+		{
+			return (0);
+		}
+		count++;
+	}
 
-return (1);
+	return (1);
 }
 
 /**
-* main - Sums all valid numbers passed as arguments.
-* @argc: Number of arguments.
-* @argv: Array of arguments.
-*
-* Return: Always 0 (Success).
-*/
+ * main - Sums all valid numbers passed as arguments.
+ * @argc: Number of arguments.
+ * @argv: Array of arguments.
+ *
+ * Return: Always 0 (Success).
+ */
 int main(int argc, char *argv[])
 {
-int count;
-int str_to_int;
-int sum = 0;
+	int count;
+	int str_to_int;
+	int sum = 0;
 
-count = 1;
-while (count < argc)
-{
-if (check_num(argv[count]))
-{
-str_to_int = atoi(argv[count]);
-sum += str_to_int;
-}
-else
-{
-printf("Error\n");
-return (1);
-}
+	count = 1;
+	while (count < argc)
+	{
+		if (check_num(argv[count]))
+		{
+			str_to_int = atoi(argv[count]);
+			sum += str_to_int;
+		}
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
 
-count++;
-}
+		count++;
+	}
 
-printf("%d\n", sum);
+	printf("%d\n", sum);
 
-return (0);
+	return (0);
 }

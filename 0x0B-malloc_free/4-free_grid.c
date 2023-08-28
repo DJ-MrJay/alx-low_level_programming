@@ -11,14 +11,14 @@
  */
 void free_grid(int **grid, int height)
 {
-int i;
+    int i;
 
-/* Free memory for each row in the grid */
-for (i = 0; i < height; i++)
-{
-free(grid[i]);
-}
+    /* Free memory for each row in the grid */
+    for (i = 0; i < height; i++)
+    {
+        free(grid[i]);
+    }
 
-/* Free memory for the array of pointers (rows) */
-free(grid);
+    /* Free memory for the array of pointers (rows) */
+    free(grid);
 }
