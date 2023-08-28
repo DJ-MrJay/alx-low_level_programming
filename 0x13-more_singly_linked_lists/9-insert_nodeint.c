@@ -1,12 +1,14 @@
 #include "lists.h"
 
 /**
- * insert_nodeint_at_index - Inserts a new node in a linked list at a given position
+ * insert_nodeint_at_index - Inserts a new node in a linked list
+ * at a given position
  * @head: Pointer to the pointer of the first node in the list
  * @idx: Index where the new node is to be added
  * @n: Data to insert in the new node
  *
- * Return: Pointer to the new node, or NULL if memory allocation fails or index is invalid
+ * Return: Pointer to the new node, or NULL if memory
+ * allocation fails or index is invalid
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
