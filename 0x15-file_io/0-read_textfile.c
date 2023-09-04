@@ -2,46 +2,51 @@
 #include <stdlib.h>
 
 /**
- * read_textfile - Read text file and print to STDOUT.
+ * read_textfile - Read a text file and print it to STDOUT.
  * @filename: The name of the text file to be read.
- * @letters: The number of letters to be read and printed.
+ * @letters: The number of letters to read and print.
  *
- * Return: The actual number of bytes read and printed, or 0 on failure.
+ * Return: The actual number of letters read and printed,
+ * 0 on failure or NULL filename.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	ssize_t w, t;
-	char *buf;
+	char *buffer;
+	ssize_t file_descriptor;
+	ssize_t total_bytes_read;
+	ssize_t bytes_written;
 
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+	if (filename == NULL)
 		return (0);
 
-	buf = malloc(sizeof(char) * letters);
-	if (buf == NULL)
+	file_descriptor = open(filename, O_RDONLY);
+	if (file_descriptor == -1)
+		return (0);
+
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
 	{
-		close(fd);
+		close(file_descriptor);
 		return (0);
 	}
 
-	t = read(fd, buf, letters);
-	if (t == -1)
+	total_bytes_read = read(file_descriptor, buffer, letters);
+	if (total_bytes_read == -1)
 	{
-		free(buf);
-		close(fd);
+		free(buffer);
+		close(file_descriptor);
 		return (0);
 	}
 
-	w = write(STDOUT_FILENO, buf, t);
-	if (w == -1)
+	bytes_written = write(STDOUT_FILENO, buffer, total_bytes_read);
+	if (bytes_written == -1 || bytes_written != total_bytes_read)
 	{
-		free(buf);
-		close(fd);
+		free(buffer);
+		close(file_descriptor);
 		return (0);
 	}
 
-	free(buf);
-	close(fd);
-	return (w);
+	free(buffer);
+	close(file_descriptor);
+	return (bytes_written);
 }
