@@ -7,7 +7,7 @@ void close_file(int fd);
 
 /**
  * create_buffer - Allocates 1024 bytes for a buffer.
- * @file: The name of the file the buffer is for.
+ * @file: The name of the file buffer is storing chars for.
  *
  * Return: A pointer to the newly-allocated buffer.
  */
@@ -50,14 +50,14 @@ void close_file(int fd)
  *
  * Return: 0 on success.
  *
- * Description: If the argument count is incorrect - exit code 97.
- * If file_from does not exist or cannot be read - exit code 98.
- * If file_to cannot be created or written to - exit code 99.
- * If file_to or file_from cannot be closed - exit code 100.
+ * Description: If the argument count is incorrect, exit with code 97.
+ * If the source file does not exist or cannot be read, exit with code 98.
+ * If the destination file cannot be created or written to, exit with code 99.
+ * If either source or destination file cannot be closed, exit with code 100.
  */
 int main(int argc, char *argv[])
 {
-	int source_fd, dest_fd, bytes_read, bytes_written;
+	int src_fd, dest_fd, r, w;
 	char *buffer;
 
 	if (argc != 3)
@@ -67,13 +67,13 @@ int main(int argc, char *argv[])
 	}
 
 	buffer = create_buffer(argv[2]);
-	source_fd = open(argv[1], O_RDONLY);
-	bytes_read = read(source_fd, buffer, 1024);
+	src_fd = open(argv[1], O_RDONLY);
+	r = read(src_fd, buffer, 1024);
 	dest_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do
 	{
-		if (source_fd == -1 || bytes_read == -1)
+		if (src_fd == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n", argv[1]);
@@ -81,21 +81,21 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		bytes_written = write(dest_fd, buffer, bytes_read);
-		if (dest_fd == -1 || bytes_written == -1)
+		w = write(dest_fd, buffer, r);
+		if (dest_fd == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			free(buffer);
 			exit(99);
 		}
 
-		bytes_read = read(source_fd, buffer, 1024);
+		r = read(src_fd, buffer, 1024);
 		dest_fd = open(argv[2], O_WRONLY | O_APPEND);
 
-	} while (bytes_read > 0);
+	} while (r > 0);
 
 	free(buffer);
-	close_file(source_fd);
+	close_file(src_fd);
 	close_file(dest_fd);
 
 	return (0);
