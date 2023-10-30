@@ -75,6 +75,14 @@ void print_elf_info(const char *filename)
 	check_elf(header->e_ident);
 	printf("ELF Header:\n");
 
+	print_class(header->e_ident);
+    print_data(header->e_ident);
+    print_version(header->e_ident);
+    print_osabi(header->e_ident);
+    print_abi(header->e_ident);
+    print_type(header->e_type, header->e_ident);
+    print_entry(header->e_entry, header->e_ident);
+
 	free(header);
 	close_elf(o);
 }
@@ -95,6 +103,17 @@ void close_elf(int elf)
 	}
 }
 
+/**
+ * main - Entry point of the program.
+ * @argc: Number of arguments supplied to the program.
+ * @argv: Array of pointers to the arguments.
+ *
+ * Description: The main function checks the command-line argument count,
+ * and if it's not exactly 2 (program name and one filename), it displays a
+ * usage message and exits with a status code of 1. Otherwise, it calls the
+ * `print_elf_info` function to process and print information about
+ * the ELF file.
+ */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	if (argc != 2)
