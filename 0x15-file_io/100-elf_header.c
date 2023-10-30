@@ -104,5 +104,5 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	}
 
 	print_elf_info(argv[1]);
-	return 0;
+	return (0);
 }
