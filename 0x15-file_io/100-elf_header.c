@@ -74,8 +74,7 @@ void print_elf_info(const char *filename)
 
     check_elf(header->e_ident);
     printf("ELF Header:\n");
-    // Print other information about the ELF header here
-
+    
     free(header);
     close_elf(o);
 }
