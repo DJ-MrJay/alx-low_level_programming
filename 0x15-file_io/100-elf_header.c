@@ -105,6 +105,8 @@ void close_elf(int elf)
  * usage message and exits with a status code of 1. Otherwise, it calls the
  * `print_elf_info` function to process and print information about
  * the ELF file.
+ *
+ * Return: 0 on success.
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
